@@ -1,0 +1,127 @@
+@import "tailwindcss" source("../");
+
+:root {
+  --ink: #f4ecd8;
+  --ink-dim: #cabf9f;
+  --void: #12140f;
+  --void-deep: #0b0c08;
+  --swamp: #46603c;
+  --swamp-bright: #7ba852;
+  --frog: #9fd857;
+  --lily: #e4c05c;
+  --stamp: #c96a4a;
+  --line: rgba(244, 236, 216, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--void);
+  color: var(--ink);
+  font-family: 'Fraunces', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono {
+  font-family: 'Space Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+code {
+  font-family: 'Space Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+::selection {
+  background: var(--frog);
+  color: var(--void-deep);
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-12px, 16px) rotate(-3deg); }
+}
+
+.float-slow {
+  animation: float-slow 9s ease-in-out infinite;
+}
+
+@keyframes float-slower {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(14px, -18px) rotate(4deg); }
+}
+
+.float-slower {
+  animation: float-slower 13s ease-in-out infinite;
+}
+
+.card-tilt {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card-tilt:hover {
+  transform: translateY(-6px) rotate(-0.6deg);
+  border-color: var(--frog);
+  box-shadow: 8px 12px 0 0 rgba(159, 216, 87, 0.16);
+}
+
+.stamp-edge {
+  --r: 8px;
+  border-radius: 2px;
+  -webkit-mask-image: radial-gradient(circle at var(--r) var(--r), transparent calc(var(--r) - 1px), black var(--r));
+  mask-image: radial-gradient(circle at var(--r) var(--r), transparent calc(var(--r) - 1px), black var(--r));
+}
+
+.underline-grow {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-grow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0.18);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  opacity: 0.6;
+}
+
+.underline-grow:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
