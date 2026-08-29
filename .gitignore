@@ -1,0 +1,9 @@
+node_modules/
+.env
+
+# Local order and asset data
+
+# Local logs and OS files
+*.log
+.DS_Store
+Thumbs.db
