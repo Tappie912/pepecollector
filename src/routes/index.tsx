@@ -145,14 +145,18 @@ function Home() {
 
       {/* hero */}
       <section id="top" className="relative max-w-6xl mx-auto px-6 md:px-10 pt-20 pb-28 md:pt-28 md:pb-36">
-        <div
-          className="float-slow absolute -right-4 top-6 hidden md:block w-40 h-52 rounded-[3px] border stamp-edge"
-          style={{ borderColor: 'var(--line)', background: 'linear-gradient(160deg, rgba(159,216,87,0.10), rgba(228,192,92,0.05))', transform: 'rotate(9deg)' }}
+        <img
+          src="/PEPEKEEPER.jpg"
+          alt=""
+          className="float-slow absolute -right-4 top-6 hidden md:block w-40 h-52 rounded-[3px] border object-cover stamp-edge"
+          style={{ borderColor: 'var(--line)', transform: 'rotate(9deg)' }}
           aria-hidden="true"
         />
-        <div
-          className="float-slower absolute right-24 top-40 hidden lg:block w-28 h-36 rounded-[3px] border stamp-edge"
-          style={{ borderColor: 'var(--line)', background: 'linear-gradient(160deg, rgba(201,106,74,0.12), rgba(159,216,87,0.05))', transform: 'rotate(-6deg)' }}
+        <img
+          src="/RAREPEPE.jpg"
+          alt=""
+          className="float-slower absolute right-24 top-40 hidden lg:block w-28 h-36 rounded-[3px] border object-cover stamp-edge"
+          style={{ borderColor: 'var(--line)', transform: 'rotate(-6deg)' }}
           aria-hidden="true"
         />
 
