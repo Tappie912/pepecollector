@@ -341,7 +341,7 @@ function Home() {
 
         <div className="space-y-4">
           {wallets.map((w, i) => {
-            const content = (
+            const cardBody = (
               <>
                 <span
                   className="mono text-[11px] tracking-[0.2em] uppercase shrink-0 px-2.5 py-1 rounded-sm w-fit"
@@ -366,11 +366,11 @@ function Home() {
 
             return w.url ? (
               <a key={w.name} href={w.url} target="_blank" rel="noreferrer noopener" className={className} style={style}>
-                {content}
+                {cardBody}
               </a>
             ) : (
               <div key={w.name} className={className} style={style}>
-                {content}
+                {cardBody}
               </div>
             )
           })}
